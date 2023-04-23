@@ -32,11 +32,10 @@ reserved = {
     'else': 'ELSE',
     'then': 'THEN',
     'write': 'WRITE',
-    'read': 'READ',
-    ':=': 'ASSIGMENT',
+    'read': 'READ'
 }
 
-tokens = ['SEMICOLON', 'COLON', 'DOT', 'COMMA', 'EQUAL', 'OPEN_BRACKET', 'CLOSE_BRACKET', 'OPEN_PARENTHESIS',
+tokens = ['SEMICOLON', 'ASSIGMENT', 'COLON', 'DOT', 'COMMA', 'EQUAL', 'OPEN_BRACKET', 'CLOSE_BRACKET', 'OPEN_PARENTHESIS',
           'CLOSE_PARENTHESIS', 'NEGATION', 'SMALLER_THAN', 'GREATER_THAN', 'PLUS', 'MINUS', 'MULTIPLICATION', 'DIVIDE',
           'IDENTIFIER', 'STRING', 'NUMBER'
           ] + list(reserved.values())
@@ -48,6 +47,7 @@ tokens e simbolos
 t_ignore = ' \t'
 
 t_SEMICOLON = r';'
+t_ASSIGMENT = r':\='
 t_COLON = r':'
 t_DOT = r'\.'
 t_COMMA = r','
@@ -66,22 +66,6 @@ t_DIVIDE = r'/'
 
 
 # t_ASPAS			= r'\"'
-
-# '''
-# t_BOOL 		= r'bool'
-# t_BREAK		= r'break'
-# t_FOR		= r'for'
-# t_FALSE		= r'false'
-# t_IF		= r'if'
-# t_INT		= r'int'
-# t_RETURN	= r'return'
-# t_STRING	= r'string'
-# t_TRUE		= r'true'
-# t_VOID		= r'void'
-# t_WHILE		= r'while'
-# t_PROCEDURE	= r'proc'
-# t_FUNCTION	= r'func'
-# '''
 
 
 def t_IDENTIFIER(t):
@@ -131,5 +115,5 @@ while True:
         break      # No more input
     print(tok)
 
-print(code)
+# print(code)
 
