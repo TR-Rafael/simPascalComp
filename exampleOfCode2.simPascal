@@ -1,4 +1,4 @@
-const TAM = 10;
+const TAM = 5.5.5;
 type vetor = array [15] of integer;
 type aluno = record
 nota1 : real;
