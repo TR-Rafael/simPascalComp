@@ -1,6 +1,6 @@
 from myLexer import my_lexer
 
-filename = 'exampleOfCode2.simPascal'
+filename = 'exampleOfCode.simPascal'
 with open(filename, 'r', encoding='utf-8') as arquivo:
     code = arquivo.read()
 

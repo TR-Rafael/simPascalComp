@@ -1,4 +1,4 @@
-const TAM = 10;
+const 6TAM = 10.;@
 type vetor = array [15] of integer;
 type aluno = record
 nota1 : real;
@@ -35,7 +35,7 @@ end
 end
 function lerDados : aluno
 begin
-write "digite as notas do aluno";
+write "digite as notas do aluno;
 read result.nota1;
 read result.nota2
 end

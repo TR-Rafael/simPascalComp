@@ -65,7 +65,6 @@ def t_STRING(t):
 
 def t_NUMBER(t):
     r"[0-9]*\.?[0-9]+"
-    t.value = float(t.value)
     return t
 
 
