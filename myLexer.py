@@ -437,7 +437,7 @@ def p_nome(p):
     else:
         p[0] = 'empty'
 def p_error(p):
-    print(f'Syntax error at {p.value!r}')
+    print(f'Syntax error at {p.value!r} in line {p.lineno!r} and position {p.lexpos!r}')
 
 
 # Build the parser
