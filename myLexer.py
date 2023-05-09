@@ -228,7 +228,7 @@ def p_lista_campos(p):
 
 def p_tipo_dado(p):
     '''
-    TIPO DADO : integer
+    TIPO_DADO : integer
               | real
               | array [ NUMERO ] of TIPO_DADO
               | record CAMPOS end
@@ -348,11 +348,11 @@ def p_exp_logica(p):
         p[0] = ('EXP_LOGICA menor', p[1])
 
 def p_exp_mat(p):
-    print(p[1])
     '''
     EXP_MAT : PARAMETRO OP_MAT EXP_MAT
             | PARAMETRO
     '''
+    print(p[1])
     if len(p) == 4:
         p[0] = ('EXP_MAT', 'PARAMETRO', 'OP_MAT', 'EXP_MAT')
     else:
