@@ -35,7 +35,7 @@ end
 end
 function lerDados : aluno
 begin
-write "digite as notas do aluno;
+write "digite as notas do aluno";
 read result.nota1;
 read result.nota2
 end

@@ -1,0 +1,13 @@
+function media(a : vetor) : integer
+var m : integer;
+begin
+m := maior(a) + menor(a);
+result := m / 2
+end
+begin
+A:=TAM + 20;
+B := fatorial(A);
+C := exp(A,B);
+D := media(E);
+F := lerDados()
+end
