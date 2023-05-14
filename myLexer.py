@@ -91,8 +91,6 @@ def my_lexer():
 
 lexer = my_lexer()
 
-
-#  testar coisas
 # Build the lexer object
 
 
@@ -100,12 +98,10 @@ lexer = my_lexer()
 
 # Write functions for each grammar rule which is
 # specified in the docstring.
-def p_PROGRAMA(p):
+def p_programa(p):
     '''
     PROGRAMA : DECLARACOES PRINCIPAL
     '''
-    # print(p[1])
-    # print(p[2])
     p[0] = ('PROGRAMA', p[1], p[2])
 
 
@@ -113,7 +109,12 @@ def p_principal(p):
     '''
     PRINCIPAL : BEGIN COMANDO LISTA_COM END
     '''
+    # print('PRINCIPÀL')
+    # print(p[2])
+    # print(p[3])
+    # print('PRINCIPÀL FIM')
     p[0] = ('PRINCIPAL', 'begin', p[2], p[3], 'end')
+
 
 def p_declaracoes(p):
     '''
@@ -139,6 +140,7 @@ def p_def_const(p):
     else:
         p[0] = 'empty'
 
+
 def p_def_tipos(p):
     '''
     DEF_TIPOS : TIPO DEF_TIPOS
@@ -148,6 +150,7 @@ def p_def_tipos(p):
         p[0] = ('DEF_TIPOS', p[1], p[2])
     else:
         p[0] = 'empty'
+
 
 def p_def_var(p):
     '''
@@ -159,6 +162,7 @@ def p_def_var(p):
     else:
         p[0] = 'empty'
 
+
 def p_def_func(p):
     '''
     DEF_FUNC : FUNCAO DEF_FUNC
@@ -169,11 +173,13 @@ def p_def_func(p):
     else:
         p[0] = 'empty'
 
+
 def p_id(p):
     '''
     ID : IDENTIFIER
     '''
     p[0] = p[1]
+
 
 def p_numero(p):
     '''
@@ -185,24 +191,24 @@ def p_numero(p):
     else:
         p[0] = float(aux)
 
+
 def p_constante(p):
     '''
     CONSTANTE : CONST ID EQUAL CONST_VALOR SEMICOLON
     '''
     p[0] = ('CONSTANTE', 'const', p[2], '=', p[4], ';')
 
+
 def p_const_valor(p):
     '''
     CONST_VALOR : STRING
                 | EXP_MAT
     '''
-    # print(p[1])
-    # isinstance(4, str)
-    #  È algo assim que tem que fazer aqui, mas preciso entender melhor o que tem dentro de p[1] para fazer a validação
     if isinstance(p[1], str):
         p[0] = ('CONST_VALOR', p[1])
     else:
         p[0] = ('CONST_VALOR', p[1])
+
 
 def p_tipo(p):
     '''
@@ -210,11 +216,13 @@ def p_tipo(p):
     '''
     p[0] = ('TIPO', 'type', p[2], '=', p[4], ';')
 
+
 def p_variavel(p):
     '''
     VARIAVEL : VAR ID LISTA_ID COLON TIPO_DADO SEMICOLON
     '''
     p[0] = ('VARIAVEL', 'var', p[2], p[3], ':', p[5], ';')
+
 
 def p_lista_id(p):
     '''
@@ -226,11 +234,13 @@ def p_lista_id(p):
     else:
         p[0] = 'empty'
 
+
 def p_campos(p):
     '''
     CAMPOS : ID COLON TIPO_DADO LISTA_CAMPOS
     '''
     p[0] = ('CAMPOS', p[1], ':', p[3], p[4])
+
 
 def p_lista_campos(p):
     '''
@@ -242,6 +252,7 @@ def p_lista_campos(p):
     else:
         p[0] = 'empty'
 
+
 def p_tipo_dado(p):
     '''
     TIPO_DADO : INTEGER
@@ -251,29 +262,31 @@ def p_tipo_dado(p):
               | ID
     '''
     if len(p) == 2:
-        # print(p)
-        # print(p[1])
         if p[1] == 'integer':
-            p[0] = ('TIPO_DADO', 'integer')
+            p[0] = ('TIPO_DADO integer', 'integer')
+        elif p[1] == 'real':
+            p[0] = ('TIPO_DADO real', 'real')
         else:
-            p[0] = ('TIPO_DADO', 'real')
-        p[0] = 'algo'
+            p[0] = ('TIPO_DADO id', p[1])
     elif len(p) == 4:
-        p[0] = ('TIPO_DADO', 'record', p[2], 'end')
+        p[0] = ('TIPO_DADO record', 'record', p[2], 'end')
     elif len(p) == 7:
-        p[0] = ('TIPO_DADO', 'array', '[', p[3], ']', 'of', p[6])
+        p[0] = ('TIPO_DADO array', 'array', '[', p[3], ']', 'of', p[6])
+
 
 def p_funcao(p):
     '''
     FUNCAO : FUNCTION NOME_FUNCAO BLOCO_FUNCAO
     '''
-    p[0] = ('FUNCAO', 'function', p[1], p[2])
+    p[0] = ('FUNCAO', 'function', p[2], p[3])
+
 
 def p_nome_funcao(p):
     '''
     NOME_FUNCAO : ID PARAM_FUNC COLON TIPO_DADO
     '''
     p[0] = ('NOME_FUNCAO', p[1], p[2], ':', p[4])
+
 
 def p_param_func(p):
     '''
@@ -285,11 +298,13 @@ def p_param_func(p):
     else:
         p[0] = 'empty'
 
+
 def p_bloco_funcao(p):
     '''
     BLOCO_FUNCAO : DEF_VAR BEGIN COMANDO LISTA_COM END
     '''
     p[0] = ('BLOCO_FUNCAO', p[1], 'begin', p[3], p[4], 'end')
+
 
 def p_lista_com(p):
     '''
@@ -301,16 +316,17 @@ def p_lista_com(p):
     else:
         p[0] = 'empty'
 
+
 def p_bloco(p):
     '''
     BLOCO : BEGIN COMANDO LISTA_COM END
           | COMANDO
     '''
-    # print(len(p))
     if len(p) == 5:
         p[0] = ('BLOCO', 'begin', p[2], p[3], 'end')
     else:
         p[0] = ('BLOCO', p[1])
+
 
 def p_comando(p):
     '''
@@ -329,7 +345,15 @@ def p_comando(p):
     elif p[1] == 'read':
         p[0] = ('READ', 'read', p[2], p[3])
     else:
+        # TA OK
+        print('COMANDO')
+        print(p[1])
+        print(p[2])
+        print(p[3])
+        print(p[4])
+        print('COMANDO FIM')
         p[0] = ('COMANDO', p[1], p[2], ':=', p[4])
+
 
 def p_else(p):
     '''
@@ -341,6 +365,7 @@ def p_else(p):
     else:
         p[0] = 'empty'
 
+
 def p_lista_param(p):
     '''
     LISTA_PARAM : PARAMETRO COMMA LISTA_PARAM
@@ -348,11 +373,12 @@ def p_lista_param(p):
                 | empty
     '''
     if len(p) == 4:
-        p[0] = ('LISTA_PARAM com mais args', p[1], ',', p[3])
+        p[0] = ('LISTA_PARAM', p[1], ',', p[3])
     elif len(p) == 2:
-        p[0] = ('LISTA_PARAM pura', p[1])
+        p[0] = ('LISTA_PARAM', p[1])
     else:
         p[0] = 'empty'
+
 
 def p_exp_logica(p):
     '''
@@ -360,33 +386,39 @@ def p_exp_logica(p):
                | EXP_MAT
     '''
     if len(p) == 4:
-        p[0] = ('EXP_LOGICA maior', p[1], p[2], p[3])
+        p[0] = ('EXP_LOGICA', p[1], p[2], p[3])
     elif len(p) == 2:
-        p[0] = ('EXP_LOGICA menor', p[1])
+        p[0] = ('EXP_LOGICA', p[1])
+
 
 def p_exp_mat(p):
     '''
     EXP_MAT : PARAMETRO OP_MAT EXP_MAT
             | PARAMETRO
     '''
-    # print(p[1])
     if len(p) == 4:
-        p[0] = ('EXP_MAT', 'PARAMETRO', 'OP_MAT', 'EXP_MAT')
-    else:
-        p[0] = ('EXP_MAT', 'PARAMETRO')
+        print('EXP_MAT maior')
+        print(p[1])
+        print(p[2])
+        print(p[3])
 
-def p_parametro(p):
+        p[0] = ('EXP_MAT', p[1], p[2], p[3])
+    else:
+        print('EXP_MAT menor')
+        print(p[1])
+        p[0] = ('EXP_MAT', p[1])
+
+
+def p_PARAMETRO(p):
     '''
     PARAMETRO : ID NOME
               | NUMERO
     '''
-    # Prints para entender melhor oque ocorre aqui depois
-    # print(p, '1')
-    # print(p[0], '1')
     if len(p) == 3:
         p[0] = ('PARAMETRO', p[1], p[2])
     else:
         p[0] = ('PARAMETRO', p[1])
+
 
 def p_op_logico(p):
     '''
@@ -404,6 +436,7 @@ def p_op_logico(p):
     elif p[1] == '!':
         p[0] = p[1]
 
+
 def p_op_mat(p):
     '''
     OP_MAT : PLUS
@@ -420,6 +453,7 @@ def p_op_mat(p):
     elif p[1] == '/':
         p[0] = p[1]
 
+
 def p_nome(p):
     '''
     NOME : DOT ID NOME
@@ -432,17 +466,19 @@ def p_nome(p):
             p[0] = ('NOME', '[', p[2], ']')
         elif p[1] == '(':
             p[0] = ('NOME', '(', p[2], ')')
-        else:
+        elif p[1] == '.':
             p[0] = ('NOME', '.', p[2], p[3])
     else:
         p[0] = 'empty'
+
+
 def p_error(p):
     print(f'Syntax error at {p.value!r} in line {p.lineno!r} and position {p.lexpos!r}')
 
 
 # Build the parser
 def my_parser():
-    return yacc(start='PROGRAMA')
+    return yacc(start='PROGRAMA', debug=0)
 # Parse an expression
 # ast = parser.parse('2 * 3 + 4')
 # print(ast)
