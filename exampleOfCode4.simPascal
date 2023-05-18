@@ -1,3 +1,14 @@
+function fatorial(a:integer) : integer
+var i : integer;
+begin
+i := 1;
+result:=1;
+while i < a
+begin
+result:=result*i;
+i:=i+1
+end
+end
 begin
 A:=TAM + 20
 end
