@@ -237,7 +237,7 @@ def p_constante(p):
     CONSTANTE : CONST ID EQUAL CONST_VALOR SEMICOLON
     '''
     # p[0] = ('CONSTANTE', 'const', p[2], '=', p[4], ';')
-    p[0] = Node('CONSTANTE', filhos=[p[2], p[4]], folhas=[p[1], p[3], p[4]])
+    p[0] = Node('CONSTANTE', filhos=[p[2], p[4]], folhas=[p[1], p[3], p[5]])
 
 
 def p_const_valor(p):
