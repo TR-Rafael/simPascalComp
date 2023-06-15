@@ -402,20 +402,19 @@ def p_comando(p):
     '''
     if p[1] == 'while':
         # p[0] = ('WHILE', 'while', p[2], p[3])
-        p[0] = Node('WHILE', filhos=[p[2], p[3]], folhas=[p[1]])
+        p[0] = Node('COMANDO WHILE', filhos=[p[2], p[3]], folhas=[p[1]])
     elif p[1] == 'if':
         # p[0] = ('IF', 'if', p[2], 'then', p[4], p[5])
-        p[0] = Node('IF', filhos=[p[2], p[4], p[5]], folhas=[p[1], p[3]])
+        p[0] = Node('COMANDO IF', filhos=[p[2], p[4], p[5]], folhas=[p[1], p[3]])
     elif p[1] == 'write':
         # p[0] = ('WRITE', 'write', p[2])
-        p[0] = Node('WRITE', filhos=[p[2]], folhas=[p[1]])
+        p[0] = Node('COMANDO WRITE', filhos=[p[2]], folhas=[p[1]])
     elif p[1] == 'read':
         # p[0] = ('READ', 'read', p[2], p[3])
-        p[0] = Node('READ', filhos=[p[2], p[3]], folhas=[p[1]])
+        p[0] = Node('COMANDO READ', filhos=[p[2], p[3]], folhas=[p[1]])
     else:
-        # TA OK
         # p[0] = ('COMANDO', p[1], p[2], ':=', p[4])
-        p[0] = Node('COMANDO', filhos=[p[1], p[2], p[4]], folhas=[p[3]])
+        p[0] = Node('COMANDO puro', filhos=[p[1], p[2], p[4]], folhas=[p[3]])
 
 
 def p_else(p):
@@ -455,10 +454,10 @@ def p_exp_logica(p):
     '''
     if len(p) == 4:
         # p[0] = ('EXP_LOGICA', p[1], p[2], p[3])
-        p[0] = Node('EXP_LOGICA', filhos=[p[1], p[2], p[3]])
+        p[0] = Node('EXP_LOGICA longa', filhos=[p[1], p[2], p[3]])
     elif len(p) == 2:
         # p[0] = ('EXP_LOGICA', p[1])
-        p[0] = Node('EXP_LOGICA', filhos=[p[1]])
+        p[0] = Node('EXP_LOGICA curta', filhos=[p[1]])
 
 
 def p_exp_mat(p):
@@ -468,10 +467,10 @@ def p_exp_mat(p):
     '''
     if len(p) == 4:
         # p[0] = ('EXP_MAT', p[1], p[2], p[3])
-        p[0] = Node('EXP_MAT', filhos=[p[1], p[2], p[3]])
+        p[0] = Node('EXP_MAT longa', filhos=[p[1], p[2], p[3]])
     else:
         # p[0] = ('EXP_MAT', p[1])
-        p[0] = Node('EXP_MAT', filhos=[p[1]])
+        p[0] = Node('EXP_MAT curta', filhos=[p[1]])
 
 
 def p_PARAMETRO(p):
@@ -481,10 +480,10 @@ def p_PARAMETRO(p):
     '''
     if len(p) == 3:
         # p[0] = ('PARAMETRO', p[1], p[2])
-        p[0] = Node('PARAMETRO', filhos=[p[1], p[2]])
+        p[0] = Node('PARAMETRO id', filhos=[p[1], p[2]])
     else:
         # p[0] = ('PARAMETRO', p[1])
-        p[0] = Node('PARAMETRO', filhos=[p[1]])
+        p[0] = Node('PARAMETRO numero', filhos=[p[1]])
 
 
 def p_op_logico(p):
