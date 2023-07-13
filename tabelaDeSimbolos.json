@@ -1,0 +1,226 @@
+[
+    {
+        "nome": "vetor",
+        "classificacao": "TIPO",
+        "tipo": "array[15] of integer",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "nota1",
+        "classificacao": "CAMPOS DE RECORD",
+        "tipo": "real",
+        "escopo": "aluno",
+        "qtd": "-",
+        "ordem": 0
+    },
+    {
+        "nome": "nota2",
+        "classificacao": "CAMPOS DE RECORD",
+        "tipo": "real",
+        "escopo": "aluno",
+        "qtd": "-",
+        "ordem": 1
+    },
+    {
+        "nome": "aluno",
+        "classificacao": "TIPO",
+        "tipo": "record",
+        "escopo": "global",
+        "qtd": 2,
+        "ordem": "-"
+    },
+    {
+        "nome": "A",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "B",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "C",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "D",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "E",
+        "classificacao": "VARIAVEL",
+        "tipo": "vetor",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "F",
+        "classificacao": "VARIAVEL",
+        "tipo": "aluno",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "TAM",
+        "classificacao": "CONSTANTE",
+        "tipo": "vou descobrir ainda",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "a",
+        "classificacao": "PARAMETROS DE FUNÇÃO",
+        "tipo": "integer",
+        "escopo": "fatorial",
+        "qtd": "-",
+        "ordem": 0
+    },
+    {
+        "nome": "i",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "fatorial",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "fatorial",
+        "classificacao": "FUNCAO",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": 1,
+        "ordem": "-"
+    },
+    {
+        "nome": "a",
+        "classificacao": "PARAMETROS DE FUNÇÃO",
+        "tipo": "real",
+        "escopo": "exp",
+        "qtd": "-",
+        "ordem": 0
+    },
+    {
+        "nome": "b",
+        "classificacao": "PARAMETROS DE FUNÇÃO",
+        "tipo": "real",
+        "escopo": "exp",
+        "qtd": "-",
+        "ordem": 1
+    },
+    {
+        "nome": "i",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "exp",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "exp",
+        "classificacao": "FUNCAO",
+        "tipo": "real",
+        "escopo": "global",
+        "qtd": 2,
+        "ordem": "-"
+    },
+    {
+        "nome": "lerDados",
+        "classificacao": "FUNCAO",
+        "tipo": "aluno",
+        "escopo": "global",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "a",
+        "classificacao": "PARAMETROS DE FUNÇÃO",
+        "tipo": "vetor",
+        "escopo": "maior",
+        "qtd": "-",
+        "ordem": 0
+    },
+    {
+        "nome": "i",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "maior",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "maior",
+        "classificacao": "FUNCAO",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": 1,
+        "ordem": "-"
+    },
+    {
+        "nome": "a",
+        "classificacao": "PARAMETROS DE FUNÇÃO",
+        "tipo": "vetor",
+        "escopo": "menor",
+        "qtd": "-",
+        "ordem": 0
+    },
+    {
+        "nome": "i",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "menor",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "menor",
+        "classificacao": "FUNCAO",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": 1,
+        "ordem": "-"
+    },
+    {
+        "nome": "a",
+        "classificacao": "PARAMETROS DE FUNÇÃO",
+        "tipo": "vetor",
+        "escopo": "media",
+        "qtd": "-",
+        "ordem": 0
+    },
+    {
+        "nome": "m",
+        "classificacao": "VARIAVEL",
+        "tipo": "integer",
+        "escopo": "media",
+        "qtd": "-",
+        "ordem": "-"
+    },
+    {
+        "nome": "media",
+        "classificacao": "FUNCAO",
+        "tipo": "integer",
+        "escopo": "global",
+        "qtd": 1,
+        "ordem": "-"
+    }
+]

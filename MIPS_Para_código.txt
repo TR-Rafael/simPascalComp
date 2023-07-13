@@ -1,0 +1,3 @@
+SW TAM 10 # Regra para const e def consts
+
+

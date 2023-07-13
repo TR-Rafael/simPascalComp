@@ -1,0 +1,119 @@
+MOV temp0 10
+MOV temp1 1
+MOV temp2 1
+MOV temp3 i
+MOV temp4 a
+MOV temp5 result
+MOV temp6 i
+MOV temp7 i
+MOV temp8 1
+MOV temp9 1
+MOV temp10 a
+MOV temp11 b
+MOV temp12 0
+MOV temp13 1
+MOV temp14 i
+MOV temp15 b
+MOV temp16 a
+MOV temp17 a
+MOV temp18 i
+MOV temp19 1
+MOV temp20 0
+MOV temp21 0
+MOV temp22 a
+MOV temp23 i
+MOV temp24 15
+MOV temp25 i
+MOV temp26 a
+MOV temp27 result
+MOV temp28 i
+MOV temp29 a
+MOV temp30 0
+MOV temp31 0
+MOV temp32 a
+MOV temp33 i
+MOV temp34 15
+MOV temp35 i
+MOV temp36 a
+MOV temp37 result
+MOV temp38 i
+MOV temp39 a
+MOV temp40 a
+MOV temp41 maior
+MOV temp42 a
+MOV temp43 menor
+MOV temp44 m
+MOV temp45 2
+Label0 media
+POP ftemp1 RA
+RET ftemp1
+Label0 menor
+POP ftemp1 RA
+RET ftemp1
+Label0 media
+POP ftemp1 RA
+RET ftemp1
+Label0 maior
+POP ftemp1 RA
+RET ftemp1
+Label0 menor
+POP ftemp1 RA
+RET ftemp1
+Label0 media
+POP ftemp1 RA
+RET ftemp1
+Label0 lerDados
+POP ftemp0 RA
+RET ftemp0
+Label0 maior
+POP ftemp1 RA
+RET ftemp1
+Label0 menor
+POP ftemp1 RA
+RET ftemp1
+Label0 media
+POP ftemp1 RA
+RET ftemp1
+Label0 exp
+POP ftemp2 RA
+RET ftemp2
+Label0 lerDados
+POP ftemp0 RA
+RET ftemp0
+Label0 maior
+POP ftemp1 RA
+RET ftemp1
+Label0 menor
+POP ftemp1 RA
+RET ftemp1
+Label0 media
+POP ftemp1 RA
+RET ftemp1
+Label0 fatorial
+POP ftemp1 RA
+RET ftemp1
+Label0 exp
+POP ftemp2 RA
+RET ftemp2
+Label0 lerDados
+POP ftemp0 RA
+RET ftemp0
+Label0 maior
+POP ftemp1 RA
+RET ftemp1
+Label0 menor
+POP ftemp1 RA
+RET ftemp1
+Label0 media
+POP ftemp1 RA
+RET ftemp1
+MOV temp46 TAM
+MOV temp47 20
+MOV temp48 A
+MOV temp49 fatorial
+MOV temp50 A
+MOV temp51 B
+MOV temp52 exp
+MOV temp53 E
+MOV temp54 media
+MOV temp55 lerDados

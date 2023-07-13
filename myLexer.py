@@ -113,20 +113,18 @@ class Node:
         #     return f' Esse é meu objeto: [{self.numero}, {self.titular}, {self.saldo}, {self.limite}
 
     def printNode(self, profundidade=0):
+        tree_output = ''
         if self.tipo == 'Vazio':
-            return
+            return ''
 
-        print(f'{auxPrint(profundidade)} Nó {self.tipo}')
-        # if len(self.filhos) != 0:
-        #     print(list(map(lambda x: print(x) if isinstance(x, str) else x.printNode(), self.filhos)))
-        # if len(self.folhas) != 0:
-        #     print(list(map(lambda x: print(x) if isinstance(x, str) else x.printNode(), self.folhas)))
+        tree_output = tree_output + f'{auxPrint(profundidade)} Nó {self.tipo}\n'
         for filho in self.filhos:
-            filho.printNode(profundidade + 1)
+            tree_output = tree_output + filho.printNode(profundidade + 1)
         for folha in self.folhas:
-            print(f'{auxPrint(profundidade+1)} Folha: \'{folha}\'')
+            tree_output = tree_output + f'{auxPrint(profundidade+1)} Folha: \'{folha}\'\n'
 
-        print(f'{auxPrint(profundidade)} fim do bloco de {self.tipo}')
+        return tree_output + f'{auxPrint(profundidade)} fim do bloco de {self.tipo}\n'
+
 
 # Write functions for each grammar rule which is
 # specified in the docstring.
@@ -134,7 +132,6 @@ def p_programa(p):
     '''
     PROGRAMA : DECLARACOES PRINCIPAL
     '''
-    #  Ta ok
     # p[0] = ('PROGRAMA', p[1], p[2])
     p[0] = Node('PROGRAMA', filhos=[p[1], p[2]])
 
